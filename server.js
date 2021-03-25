@@ -5,9 +5,9 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors=require('cors')
 require('dotenv').config()
-//const PORT = process.env.PORT || 8080
-//const mURL = process.env.MONGO_URL
-const mURL = "mongodb+srv://admin-shreesant:Test123@cluster0.swgrw.mongodb.net/PROBLEMSHUBDB";
+const PORT = process.env.PORT || 3000;
+const mURL = process.env.MONGO_URL
+//const mURL = "mongodb+srv://admin-shreesant:Test123@cluster0.swgrw.mongodb.net/PROBLEMSHUBDB";
 var CFDown = false
 var userCount = 0
 //const PORT = 8080;
@@ -401,7 +401,7 @@ app.get('/later/:handle/:pid', (request, response) => {
     })
   }
 })
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server started!");
   getWholeData();
   isCFDown();
