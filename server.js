@@ -6,8 +6,8 @@ const bodyParser = require('body-parser')
 const cors=require('cors')
 require('dotenv').config()
 const PORT = process.env.PORT || 3000;
-const mURL = process.env.MONGO_URL
-//const mURL = "mongodb+srv://admin-shreesant:Test123@cluster0.swgrw.mongodb.net/PROBLEMSHUBDB";
+//const mURL = process.env.MONGO_URL
+const mURL = "mongodb+srv://admin-shreesant:Test123@cluster0.swgrw.mongodb.net/PROBLEMSHUBDB";
 var CFDown = false
 var userCount = 0
 //const PORT = 8080;
