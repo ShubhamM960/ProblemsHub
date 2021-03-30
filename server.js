@@ -5,9 +5,8 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors=require('cors')
 require('dotenv').config()
-
+const PORT = process.env.PORT || 8080
 const mURL = process.env.MONGO_URL
-//const mURL = "mongodb+srv://admin-shreesant:Test123@cluster0.swgrw.mongodb.net/PROBLEMSHUBDB";
 var CFDown = false
 var userCount = 0
 //const PORT = 8080;
@@ -358,7 +357,6 @@ app.get('/verify/:handle/:contestId/:index', (request, response) => {
   verifySubmission(handle, cid, index, response)
 })
 
-//pid=contestId+index, example:243A,354B etc
 app.get('/skip/:handle/:pid', (request, response) => {
   skipQuestion(request.params.handle, request.params.pid, response)
 })
@@ -401,13 +399,6 @@ app.get('/later/:handle/:pid', (request, response) => {
     })
   }
 })
-
-let PORT = process.env.PORT
-
-if (PORT == null || PORT == "") {
-  PORT =8080;
-}
-
 app.listen(PORT, () => {
   console.log("Server started!");
   getWholeData();
